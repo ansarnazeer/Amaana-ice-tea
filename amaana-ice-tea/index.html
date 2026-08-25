@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AMAANA — Kashmir Peach Iced Tea</title>
+  <meta name="description" content="Amaana. One flavour. Slow-steeped Kashmir peach iced tea." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Anton&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="sections.css" />
+</head>
+
+<body>
+
+  <!-- ============================= PAGE LOADER ============================= -->
+  <div class="page-loader" id="page-loader">
+    <div class="loader-panel loader-panel-left"></div>
+    <div class="loader-panel loader-panel-right"></div>
+
+    <div class="loader-content">
+      <div class="loader-brand">AMAANA</div>
+
+      <div class="loader-line">
+        <span></span>
+      </div>
+
+      <div class="loader-status">KASHMIR · PEACH · ICED TEA</div>
+    </div>
+  </div>
+
+  <!-- ============================= NAV ============================= -->
+  <header class="nav">
+    <button class="nav-menu" id="nav-menu-btn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+
+    <a href="#hero" class="nav-logo">AMAANA</a>
+
+    <div class="nav-icons">
+      <a href="#about">About</a>
+      <a href="#product">Product</a>
+      <a href="#availability">Availability</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <!-- full-screen menu overlay -->
+  <nav class="menu-overlay" id="menu-overlay" aria-label="Section links">
+    <a href="#about"><span>01</span>About</a>
+    <a href="#product"><span>02</span>The Flavour</a>
+    <a href="#availability"><span>03</span>Availability</a>
+    <a href="#contact"><span>04</span>Contact</a>
+  </nav>
+
+  <main>
+
+    <!-- ============================= HERO (UNTOUCHED) ============================= -->
+    <section class="hero" id="hero">
+      <div class="hero-pin-wrapper" id="hero-pin-wrapper">
+        <div class="hero-sticky" id="hero-sticky">
+
+          <div class="glow-mesh" aria-hidden="true"></div>
+
+          <!-- <p class="hero-eyebrow">Kashmir Orchard &nbsp;·&nbsp; Single Origin &nbsp;·&nbsp; NO. 01</p> -->
+
+          <div class="backdrop-type" aria-hidden="true">
+            <span class="line line-1">Peach<br>Icetea</span>
+          </div>
+
+          <div class="stage-frame" aria-hidden="true">
+            <span class="corner tl"></span><span class="corner tr"></span>
+            <span class="corner bl"></span><span class="corner br"></span>
+          </div>
+
+          <div class="canvas-wrap">
+            <canvas id="bottle-canvas"></canvas>
+            <div class="canvas-loader" id="canvas-loader">
+              <span></span>
+            </div>
+          </div>
+
+          <div class="hero-bottom">
+            <div class="hero-copy">
+              <h2>Orchard To Bottle,<br>Nothing In Between.</h2>
+              <p>We make one flavour, and we make it slowly &mdash; sun-ripened
+                peaches from the foothills of Kashmir, cold-steeped and bottled
+                in small batches. No blends. No seasonal drops. Just the one
+                worth getting right.</p>
+            </div>
+
+            <div class="hero-cta">
+              <span class="price-tier">300ML &nbsp;·&nbsp; ₹49</span>
+              <button class="cta-button" type="button">Explore The Bottle</button>
+            </div>
+          </div>
+
+          <div class="scroll-hint" aria-hidden="true">
+            <span>Scroll to turn</span>
+            <i></i>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= FEATURE STRIP ============================= -->
+    <div class="feature-strip reveal-fade">
+      <div class="feature-strip-track">
+        <div class="feature-strip-inner">
+          <span>Refreshing Cooler</span>
+          <span class="strip-dot" aria-hidden="true">✦</span>
+          <span>Aromatic Peaches</span>
+          <span class="strip-dot" aria-hidden="true">✦</span>
+          <span>Flavorful Iced Specialties</span>
+          <span class="strip-dot" aria-hidden="true">✦</span>
+          <span>Made With Love</span>
+          <span class="strip-dot" aria-hidden="true">✦</span>
+          <span>Served With Care</span>
+        </div>
+        <div class="feature-strip-inner" aria-hidden="true">
+          <span>Refreshing Cooler</span>
+          <span class="strip-dot" aria-hidden="true">✦</span>
+          <span>Aromatic Peaches</span>
+          <span class="strip-dot" aria-hidden="true">✦</span>
+          <span>Flavorful Iced Specialties</span>
+          <span class="strip-dot" aria-hidden="true">✦</span>
+          <span>Made With Love</span>
+          <span class="strip-dot" aria-hidden="true">✦</span>
+          <span>Served With Care</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================= ABOUT ============================= -->
+    <section id="about" class="page-section">
+
+      <!-- About Hero -->
+      <div class="section-hero reveal-fade">
+        <div class="section-inner">
+          <!-- <p class="eyebrow">About Us</p> -->
+          <div class="two-col items-center">
+            <div>
+              <h1 class="display-heading">
+                Every Bottle Begins With Quality Ingredients, Careful Production,
+                And A Commitment To Great Taste.
+              </h1>
+              <p class="body-text" style="max-width:440px;margin-top:20px;">
+                No preservatives, no shortcuts — just fruit, water, and
+                time-tested recipes, bottled small-batch and delivered fresh
+                across Bangalore.
+              </p>
+            </div>
+            <div class="img-frame reveal-fade" style="--delay:0.1s">
+              <img src="assets/skweez.jpeg" alt="Holding a bottle of Amaana Peach Ice Tea" class="section-img" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- One Sip -->
+      <div class="section-block reveal-fade">
+        <div class="section-inner two-col items-center reverse-layout">
+          <div>
+            <h3 class="block-heading">It All Started With One Sip</h3>
+            <p class="body-text" style="max-width:440px;">
+              We are a Bengaluru-based beverage startup founded by three
+              friends united by a single goal: to craft the most refreshing
+              Peach Ice Tea in the country. Our journey began in 2026 at the
+              bustling heart of the city's tech corridor, Silk Board. We
+              source the finest ingredients to give you a revitalizing,
+              guilt-free, and delicious iced tea experience in every single
+              sip.
+            </p>
+          </div>
+          <div class="placeholder-visual reveal-fade" style="--delay:0.1s">
+            <img src="assets/friends.jpeg" alt="friends photo" class="section-img" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Why Choose Us -->
+      <div class="section-block basics-section" id="basics-section">
+
+        <div class="basics-heading">
+          <!-- <p class="eyebrow">Why Choose Us</p> -->
+          <h2 class="block-heading">
+            Built On The Basics,<br>Done Properly.
+          </h2>
+        </div>
+
+        <!-- OUTER BOX -->
+        <div class="basics-stage">
+
+          <!-- IMAGE BOX -->
+          <div class="basics-visual">
+            <img src="assets/Peach-Tree-Fertilizer-Requirements.jpg" alt="Amaana Peach Iced Tea" />
+          </div>
+
+          <!-- CONTENT -->
+          <div class="basics-features">
+
+            <article class="basics-feature active" data-index="0">
+              <div class="feature-icon">01</div>
+              <div class="feature-title">Premium Ingredients</div>
+              <p class="feature-desc">
+                Sourced fruit and clean water, nothing artificial.
+              </p>
+            </article>
+
+            <article class="basics-feature" data-index="1">
+              <div class="feature-icon">02</div>
+              <div class="feature-title">Refreshing Taste</div>
+              <p class="feature-desc">
+                Balanced sweetness that never feels heavy.
+              </p>
+            </article>
+
+            <article class="basics-feature" data-index="2">
+              <div class="feature-icon">03</div>
+              <div class="feature-title">Hygienic Manufacturing</div>
+              <p class="feature-desc">
+                Bottled in a controlled, sanitised facility.
+              </p>
+            </article>
+
+            <article class="basics-feature" data-index="3">
+              <div class="feature-icon">04</div>
+              <div class="feature-title">Quality Checked</div>
+              <p class="feature-desc">
+                Every batch tested before it reaches you.
+              </p>
+            </article>
+
+            <article class="basics-feature" data-index="4">
+              <div class="feature-icon">05</div>
+              <div class="feature-title">Loved by Customers</div>
+              <p class="feature-desc">
+                Repeat orders from Bangalore's regulars.
+              </p>
+            </article>
+
+          </div>
+
+          <!-- DOTS -->
+          <div class="basics-dots">
+            <button class="basics-dot active" data-index="0"></button>
+            <button class="basics-dot" data-index="1"></button>
+            <button class="basics-dot" data-index="2"></button>
+            <button class="basics-dot" data-index="3"></button>
+            <button class="basics-dot" data-index="4"></button>
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+    </section>
+
+    <!-- ============================= PRODUCT ============================= -->
+    <section id="product" class="page-section">
+
+      <div class="section-hero reveal-fade">
+        <div class="section-inner">
+          <div class="two-col items-center">
+            <div>
+              <!-- <p class="eyebrow">The Flavour</p> -->
+              <h1 class="display-heading">Amaana Peach <br>Iced Tea</h1>
+              <p class="tagline">Sip the freshness, feel the goodness.</p>
+              <p class="body-text" style="max-width:440px;margin-top:16px;">
+                Inspired by the lush peach orchards of Kashmir, India — famous
+                for its juicy and aromatic peaches. Refreshing &amp; natural,
+                best served chilled, and made with quality.
+              </p>
+            </div>
+            <div class="img-frame reveal-fade" style="--delay:0.1s">
+              <img src="assets/bottle-hand.jpeg" alt="Amaana Peach Ice Tea bottle in hand" class="section-img" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Premium Peach -->
+      <div class="section-block reveal-fade">
+        <div class="section-inner two-col items-center reverse-layout">
+          <div>
+            <h3 class="block-heading">Premium Peach</h3>
+            <p class="body-text" style="max-width:440px;">
+              Highly refreshing, sweet, and tangy beverage made by blending
+              brewed tea (typically black or green) with fresh peach puree,
+              juice, or flavored syrup.
+            </p>
+          </div>
+          <div class="img-frame reveal-fade" style="--delay:0.1s">
+            <img src="assets/peaches-basket.png" alt="Fresh peaches in a basket" class="section-img peach-img" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Ingredients -->
+      <div class="section-block reveal-fade">
+        <div class="section-inner">
+          <h2 class="block-heading" style="margin-bottom:48px;">Ingredients</h2>
+          <div class="ingredients-list">
+            <div class="ingredient-item reveal-fade" style="--delay:0s">
+              <span class="ingredient-num">01</span>
+              <div>
+                <span class="ingredient-name">Peach Extract</span>
+                <span class="ingredient-desc">Delivers the rich, fruity flavor of real peaches.</span>
+              </div>
+            </div>
+            <div class="ingredient-item reveal-fade" style="--delay:0.06s">
+              <span class="ingredient-num">02</span>
+              <div>
+                <span class="ingredient-name">Black Tea Extract</span>
+                <span class="ingredient-desc">Provides a smooth and refreshing tea taste.</span>
+              </div>
+            </div>
+            <div class="ingredient-item reveal-fade" style="--delay:0.12s">
+              <span class="ingredient-num">03</span>
+              <div>
+                <span class="ingredient-name">Lemon Juice</span>
+                <span class="ingredient-desc">Adds a zesty citrus freshness.</span>
+              </div>
+            </div>
+            <div class="ingredient-item reveal-fade" style="--delay:0.18s">
+              <span class="ingredient-num">04</span>
+              <div>
+                <span class="ingredient-name">Sugar</span>
+                <span class="ingredient-desc">Balances the flavors with perfect sweetness.</span>
+              </div>
+            </div>
+            <div class="ingredient-item reveal-fade" style="--delay:0.24s">
+              <span class="ingredient-num">05</span>
+              <div>
+                <span class="ingredient-name">Purified Water</span>
+                <span class="ingredient-desc">Ensures purity and freshness in every sip.</span>
+              </div>
+            </div>
+          </div>
+          <div class="peach-basket-wrap reveal-fade" style="--delay:0.1s">
+            <img src="assets/bottle-peach.jpeg" alt="Fresh peaches" class="peach-basket-img" />
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ============================= AVAILABILITY ============================= -->
+    <section id="availability" class="page-section availability-section">
+
+      <div class="section-hero availability-hero reveal-fade">
+        <div class="section-inner">
+          <p class="eyebrow">Where to find us</p>
+
+          <h1 class="availability-heading">
+            Now Available
+          </h1>
+
+          <p class="availability-intro">
+            Amaana is starting close to home — one city, a few carefully chosen
+            locations, and more coming soon.
+          </p>
+        </div>
+      </div>
+
+      <div class="availability-list-wrap">
+        <div class="section-inner">
+
+          <div class="availability-list">
+
+            <!-- 01 -->
+            <article class="availability-item reveal-fade">
+              <button class="availability-trigger" type="button" aria-expanded="true">
+                <span class="availability-number">01</span>
+
+                <span class="availability-main">
+                  <span class="availability-title">
+                    Silk Board, Bangalore
+                  </span>
+
+                  <span class="availability-summary">
+                    Our first stop — where it all started.
+                  </span>
+                </span>
+
+                <span class="availability-status available">
+                  Available
+                </span>
+
+                <span class="availability-plus">+</span>
+              </button>
+
+              <div class="availability-answer">
+                <p>
+                  Amaana Peach Ice Tea is currently available around Silk Board,
+                  Bangalore. This is where we are beginning our journey before
+                  expanding to more stores and neighbourhoods.
+                </p>
+
+                <span class="availability-note">
+                  Bangalore · Currently stocked
+                </span>
+              </div>
+            </article>
+
+            <!-- 02 -->
+            <article class="availability-item reveal-fade">
+              <button class="availability-trigger" type="button" aria-expanded="false">
+                <span class="availability-number">02</span>
+
+                <span class="availability-main">
+                  <span class="availability-title">
+                    Across Bangalore
+                  </span>
+
+                  <span class="availability-summary">
+                    More stores are now carrying Amaana.
+                  </span>
+                </span>
+
+                <span class="availability-status available">
+                  Available
+                </span>
+
+                <span class="availability-plus">+</span>
+              </button>
+
+              <div class="availability-answer">
+                <p>
+                  We are gradually expanding across Bangalore. Availability may
+                  vary by store, so check with your nearest stockist before
+                  making the trip.
+                </p>
+
+                <span class="availability-note">
+                  Bangalore · Expanding
+                </span>
+              </div>
+            </article>
+
+            <!-- 03 -->
+            <article class="availability-item reveal-fade">
+              <button class="availability-trigger" type="button" aria-expanded="false">
+                <span class="availability-number">03</span>
+
+                <span class="availability-main">
+                  <span class="availability-title">
+                    Mangaluru
+                  </span>
+
+                  <span class="availability-summary">
+                    Coming next to our home turf.
+                  </span>
+                </span>
+
+                <span class="availability-status soon">
+                  Coming Soon
+                </span>
+
+                <span class="availability-plus">+</span>
+              </button>
+
+              <div class="availability-answer">
+                <p>
+                  Mangaluru is next on our list. We are working towards bringing
+                  Amaana closer to more people in the city.
+                </p>
+
+                <span class="availability-note">
+                  Mangaluru · Coming soon
+                </span>
+              </div>
+            </article>
+
+            <!-- 04 -->
+            <article class="availability-item reveal-fade">
+              <button class="availability-trigger" type="button" aria-expanded="false">
+                <span class="availability-number">04</span>
+
+                <span class="availability-main">
+                  <span class="availability-title">
+                    More Cities
+                  </span>
+
+                  <span class="availability-summary">
+                    The journey does not stop here.
+                  </span>
+                </span>
+
+                <span class="availability-status soon">
+                  Expanding
+                </span>
+
+                <span class="availability-plus">+</span>
+              </button>
+
+              <div class="availability-answer">
+                <p>
+                  We are looking at new cities and new stockists as Amaana grows.
+                  Our goal is simple: make the drink easier to find without
+                  losing the feeling of a small, local brand.
+                </p>
+
+                <span class="availability-note">
+                  India · More locations to follow
+                </span>
+              </div>
+            </article>
+
+            <!-- 05 -->
+            <article class="availability-item reveal-fade">
+              <button class="availability-trigger" type="button" aria-expanded="false">
+                <span class="availability-number">05</span>
+
+                <span class="availability-main">
+                  <span class="availability-title">
+                    Want to Stock Amaana?
+                  </span>
+
+                  <span class="availability-summary">
+                    We are always open to the right stores.
+                  </span>
+                </span>
+
+                <span class="availability-status enquiry">
+                  Get in touch
+                </span>
+
+                <span class="availability-plus">+</span>
+              </button>
+
+              <div class="availability-answer">
+                <p>
+                  If you run a store, café, restaurant, or retail space and want
+                  to bring Amaana to your customers, reach out through the
+                  Contact section below.
+                </p>
+
+                <a href="#contact" class="availability-link">
+                  Become a stockist →
+                </a>
+              </div>
+            </article>
+
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ============================= CONTACT ============================= -->
+    <section id="contact" class="page-section">
+
+      <div class="section-hero reveal-fade">
+        <div class="section-inner">
+          <div class="contact-layout">
+
+            <!-- Left -->
+            <div>
+              <p class="eyebrow">Get In Touch</p>
+              <h1 class="display-heading">Let's Connect</h1>
+              <ul class="contact-list">
+                <li>
+                  <span class="contact-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M20 10.5c0 5.25-8 11-8 11s-8-5.75-8-11a8 8 0 1 1 16 0Z"></path>
+                      <circle cx="12" cy="10.5" r="2.5"></circle>
+                    </svg>
+                  </span>
+                  <span>Silk Board, Bangalore</span>
+                </li>
+
+                <li>
+                  <a href="https://www.instagram.com/amanah.icedtea/" target="_blank" rel="noopener noreferrer"
+                    class="contact-social-link" aria-label="Amaana on Instagram">
+                    <span class="contact-icon instagram-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24">
+                        <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <circle cx="17.5" cy="6.5" r="1"></circle>
+                      </svg>
+                    </span>
+                    <span>Instagram</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="https://wa.me/918431429825" target="_blank" rel="noopener noreferrer"
+                    class="contact-social-link" aria-label="Message Amaana on WhatsApp">
+                    <span class="contact-icon whatsapp-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24">
+                        <path d="M20.5 11.7a8.5 8.5 0 0 1-12.55 7.45L3.5 20.5l1.4-4.3A8.5 8.5 0 1 1 20.5 11.7Z"></path>
+                        <path
+                          d="M8.2 8.1c.2-.4.4-.4.7-.4h.6c.2 0 .4.1.5.4l.8 1.9c.1.2.1.4-.1.6l-.6.7c.5 1 1.3 1.8 2.4 2.3l.7-.7c.2-.2.4-.2.6-.1l1.8.8c.3.1.4.3.3.6-.2.7-.8 1.3-1.5 1.5-1.1.3-2.7-.4-4.2-1.5-1.4-1-2.5-2.2-3-3.5-.4-1-.3-1.9.1-2.6Z">
+                        </path>
+                      </svg>
+                    </span>
+                    <span>WhatsApp</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Right — Form -->
+            <div class="contact-form-wrap reveal-fade" style="--delay:0.1s">
+              <form class="contact-form" id="contact-form" action="https://formspree.io/f/mnpaezyz" method="POST">
+                <div class="form-group">
+                  <label class="form-label">Name</label>
+                  <input type="text" name="name" required placeholder="Your name" class="form-input" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Email</label>
+                  <input type="email" name="email" required placeholder="your@gmail.com" class="form-input" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Message</label>
+                  <textarea name="message" required rows="4" placeholder="Tell us what you need"
+                    class="form-input form-textarea"></textarea>
+                </div>
+                <button type="submit" class="btn-submit" id="submit-btn">Send Message</button>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- footer section -->
+
+  <footer class="site-footer">
+
+    <div class="footer-inner">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+        <a href="#top" class="footer-logo">
+          AMAANA
+        </a>
+
+        <div class="footer-socials">
+
+          <a href="https://www.instagram.com/amanah.icedtea/" target="_blank" rel="noopener noreferrer"
+            aria-label="Amaana on Instagram" class="footer-social">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+              <circle cx="12" cy="12" r="4"></circle>
+              <circle cx="17.5" cy="6.5" r="1"></circle>
+            </svg>
+          </a>
+
+          <a href="https://wa.me/918431429825" target="_blank" rel="noopener noreferrer" aria-label="Amaana on WhatsApp"
+            class="footer-social">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20.5 11.7a8.5 8.5 0 0 1-12.55 7.45L3.5 20.5l1.4-4.3A8.5 8.5 0 1 1 20.5 11.7Z"></path>
+              <path
+                d="M8.2 8.1c.2-.4.4-.4.7-.4h.6c.2 0 .4.1.5.4l.8 1.9c.1.2.1.4-.1.6l-.6.7c.5 1 1.3 1.8 2.4 2.3l.7-.7c.2-.2.4-.2.6-.1l1.8.8c.3.1.4.3.3.6-.2.7-.8 1.3-1.5 1.5-1.1.3-2.7-.4-4.2-1.5-1.4-1-2.5-2.2-3-3.5-.4-1-.3-1.9.1-2.6Z">
+              </path>
+            </svg>
+          </a>
+
+        </div>
+      </div>
+
+
+      <!-- Navigation -->
+      <nav class="footer-nav" aria-label="Footer navigation">
+
+        <a href="#about">About</a>
+        <a href="#product">Product</a>
+        <a href="#availability">Availability</a>
+        <a href="#contact">Contact</a>
+
+      </nav>
+
+
+      <!-- Copyright -->
+      <div class="footer-meta">
+        <span>© 2026 Amaana.</span>
+        <span>Kashmir, India.</span>
+      </div>
+
+    </div>
+
+  </footer>
+
+  <script src="dist/bundle.js"></script>
+  <script src="sections.js"></script>
+</body>
+
+</html>

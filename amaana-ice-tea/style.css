@@ -1,0 +1,508 @@
+/* =========================================================================
+   AMAANA — design tokens
+   bg      #0a0908  near-black, warm undertone (not pure #000)
+   bg-alt  #131110  panel / stub background
+   crimson #4a0e17  deep burgundy accent
+   crimson-2 #7a2418  lighter wine, used for glow gradients
+   peach   #e7a97e  desaturated peach, sparing highlight only
+   ink     #f4ece1  warm ivory text
+   ink-dim #a89c8e  muted warm grey
+   line    #262220  hairline dividers
+   ========================================================================= */
+
+:root {
+  --bg: #0a0908;
+  --bg-alt: #131110;
+  --crimson: #4a0e17;
+  --crimson-2: #7a2418;
+  --peach: #e7a97e;
+  --ink: #f4ece1;
+  --ink-dim: #a89c8e;
+  --line: #262220;
+
+  --font-display: 'Fraunces', serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  --nav-h: 92px;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; }
+
+::selection { background: var(--crimson); color: var(--ink); }
+
+/* ---------------------------------- NAV --------------------------------- */
+
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(20px, 4vw, 56px);
+  z-index: 100;
+  mix-blend-mode: difference;
+}
+.menu-open .nav { mix-blend-mode: normal; }
+
+.nav-menu {
+  background: none;
+  border: none;
+  width: 34px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 0;
+}
+.nav-menu span {
+  display: block;
+  height: 1px;
+  background: var(--ink);
+  width: 100%;
+}
+.nav-menu span:last-child { width: 60%; }
+
+@media (min-width: 721px) {
+  .nav-menu {
+    display: none;
+  }
+}
+
+.nav-logo {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  font-weight: 500;
+}
+
+.nav-icons {
+  display: flex;
+  gap: 22px;
+}
+.nav-icons a {
+  color: var(--ink);
+  text-decoration: none;
+  font-family: var(--font-family);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  opacity: 0.75;
+  transition: opacity 0.2s ease;
+}
+.nav-icons a:hover { opacity: 1; }
+
+/* Mobile nav: the desktop link row is replaced by the hamburger + overlay,
+   so it must not render (this was overlapping the hamburger + logo). */
+@media (max-width: 720px) {
+  .nav-icons { display: none; }
+  .nav { justify-content: space-between; gap: 16px; }
+  .nav-logo { order: 1; }
+  .nav-menu { order: 2; }
+}
+
+.nav-menu {
+  position: relative;
+  z-index: 101;
+}
+.nav-menu span {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.menu-open .nav-menu span:first-child { transform: translateY(3.5px) rotate(45deg); }
+.menu-open .nav-menu span:last-child { transform: translateY(-3.5px) rotate(-45deg); width: 100%; }
+
+/* full-screen menu overlay */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 98;
+  background: rgba(10, 9, 8, 0.97);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 clamp(20px, 5vw, 64px);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-12px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+.menu-open .menu-overlay {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.menu-overlay a {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(32px, 6vw, 58px);
+  color: var(--ink-dim);
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  padding: 6px 0;
+  transition: color 0.25s ease;
+}
+.menu-overlay a span {
+  font-family: var(--font-mono);
+  font-style: normal;
+  font-size: 12px;
+  color: var(--crimson-2);
+  letter-spacing: 0.1em;
+}
+.menu-overlay a:hover { color: var(--ink); }
+
+/* ---------------------------------- HERO --------------------------------- */
+
+.hero-pin-wrapper {
+  position: relative;
+  height: 400vh;
+}
+
+.hero-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: var(--bg);
+}
+
+.glow-mesh {
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(45% 38% at 50% 38%, rgba(122, 36, 24, 0.55), transparent 70%),
+    radial-gradient(30% 24% at 68% 62%, rgba(231, 169, 126, 0.10), transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+/* .hero-eyebrow {
+  position: absolute;
+  top: calc(var(--nav-h) + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  font-family: var(--font-family);
+  font-size: 10.5px;
+  letter-spacing: 0.22em;
+  color: var(--ink-dim);
+  z-index: 5;
+  white-space: nowrap;
+  width: 100%;
+  text-align: center;
+  padding: 0 16px;
+}
+
+@media (max-width: 600px) {
+  .hero-eyebrow {
+    font-size: 8.5px;
+    letter-spacing: 0.14em;
+    white-space: normal;
+    line-height: 1.6;
+  }
+}
+
+@media (min-width: 721px) {
+  .hero-eyebrow {
+    top: calc(var(--nav-h) - 60px);
+  }
+} */
+
+
+.hero-eyebrow {
+  position: absolute;
+  top: calc(var(--nav-h) / 2);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  /* font-family: var(--font-family); */
+  font-family: 'Inter', sans-serif;
+  font-size: 10.5px;
+  letter-spacing: 0.22em;
+  color: var(--ink-dim);
+  z-index: 2;
+  white-space: nowrap;
+  width: 100%;
+  text-align: center;
+  padding: 0 16px;
+}
+
+@media (max-width: 600px) {
+  .hero-eyebrow {
+    font-size: 8.5px;
+    letter-spacing: 0.14em;
+    white-space: normal;
+    line-height: 1.6;
+  }
+}
+/* .backdrop-type {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+} */
+
+.backdrop-type {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+  background-image: url('assets/backdrop-lava.webp');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.85; /* tweak to taste so it doesn't overpower the bottle canvas */
+}
+
+
+.backdrop-type .line {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: italic;
+  line-height: 0.92;
+  color: transparent;
+  -webkit-text-stroke: 2.5px rgba(244, 236, 225, 0.16);
+  font-size: clamp(85px, 18vw, 260px);
+  letter-spacing: -0.051em;
+}
+
+/* .backdrop-type .line {
+  font-family: 'Anton', var(--font-display);
+  font-weight: 400;
+  font-style: normal;
+  line-height: 0.9;
+  color: var(--peach);
+  -webkit-text-stroke: 0;
+  font-size: clamp(90px, 18vw, 260px);   /* ⬆ bumped up from clamp(64px, 13vw, 190px) */
+  /* letter-spacing: 0.01em;
+} */ 
+
+
+
+/* .backdrop-type .line-2 {
+  color: rgba(244, 236, 225, 0.05);
+  -webkit-text-stroke: 1px rgba(244, 236, 225, 0.22);
+} */
+
+.stage-frame {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  opacity: var(--frame-opacity, 0);
+  transition: opacity 0.4s ease;
+}
+.stage-frame .corner {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border: 1px solid rgba(231, 169, 126, 0.55);
+}
+/* .stage-frame .tl { top: 34%; left: 18%; border-right: none; border-bottom: none; }
+.stage-frame .tr { top: 34%; right: 18%; border-left: none; border-bottom: none; }
+.stage-frame .bl { bottom: 22%; left: 18%; border-right: none; border-top: none; }
+.stage-frame .br { bottom: 22%; right: 18%; border-left: none; border-top: none; } */
+
+.stage-frame .tl { top: 34%; left: 25%; border-right: none; border-bottom: none; }
+.stage-frame .tr { top: 34%; right: 25%; border-left: none; border-bottom: none; }
+.stage-frame .bl { bottom: 22%; left: 25%; border-right: none; border-top: none; }
+.stage-frame .br { bottom: 22%; right: 25%; border-left: none; border-top: none; }
+
+.canvas-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+}
+#bottle-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+.model-ready #bottle-canvas { opacity: 1; }
+
+.canvas-loader {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.4s ease;
+}
+.model-ready .canvas-loader,
+.model-error .canvas-loader { opacity: 0; pointer-events: none; }
+.canvas-loader span {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid rgba(244, 236, 225, 0.18);
+  border-top-color: var(--peach);
+  animation: spin 0.9s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.hero-bottom {
+  position: relative;
+  z-index: 6;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+  padding: 0 clamp(20px, 5vw, 64px) clamp(28px, 5vh, 56px);
+  opacity: var(--copy-opacity, 0);
+  transform: translateY(var(--copy-shift, 14px));
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* .hero-copy { max-width: 340px; } */
+
+.hero-copy { max-width: 340px; margin-bottom: 30px; }
+
+@media (max-width: 720px) {
+  .hero-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    padding-top: 90px;
+    /* Legibility scrim so the copy never fights visually with the bottle
+       render sitting behind it on narrow screens. */
+    background: linear-gradient(
+      180deg,
+      rgba(10, 9, 8, 0) 0%,
+      rgba(10, 9, 8, 0.55) 38%,
+      rgba(10, 9, 8, 0.92) 78%,
+      rgba(10, 9, 8, 0.92) 100%
+    );
+  }
+  .hero-copy { margin-bottom: 0; max-width: 100%; }
+  .hero-copy h2 { font-size: 20px; }
+  .hero-cta {
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 0;
+    margin-right: 0;
+    gap: 12px;
+  }
+  .price-tier { margin-right: 0; }
+  .cta-button { width: 100%; text-align: center; }
+  /* .backdrop-type .line { font-size: clamp(52px, 17vw, 96px); } */
+  .backdrop-type .line { 
+  font-size: clamp(90px, 22vw, 220px); 
+  white-space: normal;
+  }
+  .stage-frame .tl, .stage-frame .tr { top: 30%; }
+  .stage-frame .bl, .stage-frame .br { bottom: 30%; }
+}
+.hero-copy h2 {
+  font-family: var(--font-Montserrat);
+  font-weight: 600;
+  font-size: clamp(19px, 2.1vw, 24px);
+  line-height: 1.25;
+  margin: 0 0 12px;
+  color: var(--ink);
+}
+.hero-copy p {
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--ink-dim);
+  font-weight: 300;
+  margin: 0;
+}
+
+.hero-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 14px;
+  flex-shrink: 0;
+  margin-bottom: 75px;
+  margin-right: 24px;
+}
+.price-tier {
+  font-family: var(--font-family);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--ink-dim);
+  margin-right: 24px;
+}
+.cta-button {
+  background: var(--ink);
+  color: #17110d;
+  border: none;
+  padding: 15px 30px;
+  font-family: var(--font-family);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-radius: 20px;
+  transition: background 0.25s ease, transform 0.25s ease;
+  white-space: nowrap;
+}
+.cta-button:hover { background: var(--peach); transform: translateY(-1px); }
+
+.scroll-hint {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.16em;
+  color: var(--ink-dim);
+  opacity: var(--hint-opacity, 1);
+  transition: opacity 0.3s ease;
+  text-transform: uppercase;
+}
+.scroll-hint i {
+  width: 1px;
+  height: 26px;
+  background: linear-gradient(var(--ink-dim), transparent);
+  display: block;
+}
+
+/* Footer is fully styled in sections.css (.site-footer / .footer-inner /
+   .footer-meta etc.) — this legacy stub block was a dead duplicate that
+   only won the cascade for `background`, and its .footer-note class isn't
+   used anywhere in the markup, so it's removed rather than kept as dead
+   code. */
